@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <img src="img/javascript.png" alt="">
+            <h2>Tarea 5</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#control-flujo">Control de Flujo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bucles-iteracion">Bucles e Iteración</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#funciones">Funciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Expresiones y operadores">Expresiones y Operadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dom">DOM</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>JavaScript</h1>
+    </header>
+    <main>
+        <!-- Control de Flujo y Manejo de Errores -->
+        <section id="control-flujo">
+            <h2>Control de Flujo y Manejo de Errores</h2>
+            <!-- if else -->
+            <h3>If else</h3>
+            <p>La declaración if-else realiza una acción si la condición evaluada resulta verdadera o bien ejecuta otra acción si resulta falsa.</p>
+            <p>Ejemplo:</p>
+            <input type="number" id="nota" placeholder="Ingresa la nota">
+            <button onclick="comprobarCalificacion()">Comprobar Calificación</button>
+            <p id="mensaje"></p>
+            <br>
+             
+             <!-- if else anidado -->
+            <h3>If else anidado</h3>
+            <p>Un if-else anidado se usa cuando hay múltiples condiciones para evaluar en secuencia.</p>
+            <p>Ejemplo:</p>
+            <input type="number" id="edad" placeholder="Ingresa tu edad">
+            <button onclick="comprobarRangoEdad()">Comprobar Edad</button>
+            <p id="resultado"></p>
+            <br>
+
+
+            <!-- switch -->
+            <h3>Switch</h3>
+            <p>La declaración Switch se utiliza para realizar diferentes acciones en función de diferentes condiciones.</p>
+            <p>Ejemplo:</p>
+            <button onclick="Dia_Semana()">Mostrar día de la Semana</button>
+            <p id="dia"></p>
+            <br>
+           
+
+            <!-- try/catch/throw -->
+            <h3>try/catch/throw</h3>
+             <p>
+                El bloque try...catch en JavaScript se utiliza para manejar errores de manera controlada durante la ejecución de un programa. Su objetivo principal es capturar 
+                y gestionar excepciones (errores) que puedan ocurrir en el código dentro del bloque try, evitando que el programa se detenga abruptamente cuando sucede un error.</p>
+             <p>Ejemplo:</p>
+             <button onclick="generarError()">Generar Error</button>
+            <p id="errorMensaje"></p>
+
+            <h3>Objeto Error</h3>
+            <p>En JavaScript, los objetos Error son usados para representar errores en el código. Estos objetos proporcionan una forma estandarizada de manejar y comunicar errores,
+                 ya que incluyen propiedades útiles como el nombre y el mensaje del error.</p>
+            <p>Ejemplo:</p>
+            <button onclick="ObjetoError()">Generar Error</button>
+            <p id="errorMS"></p>
+            </section>
+
+        <!-- Bucles e Iteración -->
+        <section id="bucles-iteracion">
+            <h2>Bucles e Iteración</h2>
+
+            <!-- for -->
+            <h3>For</h3>
+            <p>La declaración for crea un bucle con 3 expresiones opcionales:</p>
+            <p>La expresión 1 se ejecuta (una vez) antes de la ejecución del bloque de código. <br>
+               La expresión 2 define la condición para ejecutar el bloque de código. <br>
+               La expresión 3 se ejecuta (cada vez) después de que se haya ejecutado el bloque de código.</p>
+            <p>Ejemplo:</p>
+            <button onclick="mostrarLista()">Mostrar Lista</button>
+            <p id="lista"></p>
+         
+
+            <!-- while -->
+            <h3>while</h3>
+            <p>El bucle while recorre un bloque de código siempre que una condición especificada sea verdadera.</p>
+            <p>Ejemplo:</p>
+            <button onclick="generarNumeros()">Mostrar números con while</button>
+            <p id="ciclo"></p>
+          
+
+            <!-- do...while -->
+            <h3>do while</h3>
+            <p>El bucle do while es una variante del bucle while. <br>
+               Este bucle ejecutará el bloque de código una vez, antes de verificar si la condición es verdadera, y luego repetirá el bucle mientras la condición sea verdadera.</p>
+            <p>Ejemplo:</p>
+               <button onclick="GenerarNumerosDoWhile()">Mostrar números con do while</button>
+            <p id="ciclo2"></p>
+    
+        </section>
+
+        <!-- Funciones -->
+        <section id="funciones">
+            <h2>Funciones</h2>
+            <h3>Definir y llamar funciones</h3>
+            <p>Definir una función en JavaScript significa crear un bloque de código que realiza una tarea específica. Una función puede recibir datos (argumentos) y puede devolver un resultado (valor). Las funciones ayudan a organizar el código y a evitar la repetición.
+              <br> Y llamar una función significa ejecutar el código que se ha definido en esa función
+            </p>
+            <p>Ejemplo:</p>
+            <input type="text" id="nombre" placeholder="Ingrese su nombre">
+            <button onclick="saludar()">Saludar</button>
+            <p id="saludar"></p>
+        </section>
+
+        <!--Expresiones y operadores -->
+        <section id="Expresiones y operadores">
+            <h2>Asignación y Comparación </h2>
+            <h3>Asignación</h3>
+            <p>La asignación se usa para asignar un valor a una variable. El operador de asignación más común es = </p>
+            <p>Ejemplo:</p>
+            <button onclick="calcularSuma()">Calcular Suma</button>
+            <p id="suma"></p>
+
+            <h3>Operadores aritméticos</h3>
+            <p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas.</p>
+            <p>Ejemplo:</p>
+            <button onclick="calcularMultiplicacion()">Calcular Multiplicación</button>
+            <p id="mult"></p>
+
+            <h3>Operadores Lógicos</h3>
+            <p>Los operadores lógicos son herramientas que se utilizan para realizar operaciones sobre valores booleanos (verdadero o falso).</p>
+            <p>Ejemplo:</p>
+            <button onclick="VerificarHorario()">Verificar horario de la Oficina</button>
+            <p id="hora"></p> <br>
+
+            <h2>Números y fechas </h2>
+            <h3>Objeto Number</h3>
+            <p>El objeto Number en JavaScript es un objeto global que proporciona propiedades y métodos para trabajar con números.
+                En este ejemplo se utiliza para convertir una cadena string en numero.
+            </p>
+            <p>Ejemplo:</p>
+            <button onclick="ObjetoNumber()">Mostrar Resultado</button>
+            <p id="result"></p>
+
+            <h3>Objeto Math</h3>
+             <p>El objeto Math en JavaScript es un objeto global que proporciona funciones y constantes matemáticas. A diferencia de otros objetos, Math no es un constructor y no se puede crear una instancia de él. En su lugar, se utiliza directamente para realizar operaciones matemáticas complejas de manera sencilla.</p>
+             <p>Ejemplo:</p>
+             <button onclick="ObjetoMath()">Mostrar Resultado</button>
+            <p id="resul"></p>
+             
+            <h3>Objeto Date</h3>
+            <p>El objeto Date en JavaScript se utiliza para trabajar con fechas y horas. Proporciona métodos para crear, manipular y formatear fechas y horas de manera sencilla.</p>
+            <p>Ejemplo:</p>
+            <button onclick="ObjetoDate()">Mostrar Resultado</button>
+            <p id="fecha"></p>
+
+            <h2>Formateo de texto</h2>
+            <h3>Cadenas literales</h3>
+            <p>Las cadenas literales son secuencias de caracteres que se escriben directamente en el código. En JavaScript, puedes crear cadenas usando comillas simples ('), comillas dobles ("), o comillas invertidas (`) para las plantillas literales (template literals).</p>
+            <p>Ejemplo:</p>
+            <button onclick="CadenasLiterales()">Mostrar Resultado</button>
+            <p id="mostrarResultado"></p>
+
+            <h3>Objeto String</h3>
+            <p>El objeto String es utilizado para crear y manipular cadenas de texto.</p>
+            <p>Ejemplo:</p>
+            <button onclick="ObjetoString()">Mostrar Resultado</button>
+            <p id="resultadoString"></p>
+
+            <h2>Colecciones indexadas</h2>
+            <h3>Arreglos</h3>
+            <p> Los arreglos (arrays) son estructuras de datos que permiten almacenar múltiples valores en una sola variable. Los arreglos en JavaScript son dinámicos y pueden contener elementos de diferentes tipos (números, cadenas, objetos, etc.). Se definen utilizando corchetes [ ].</p>
+            <p>Ejemplo:</p>
+            <button onclick="MostrarEscuderiasF1()">Mostrar Escuderias de la F1</button>
+            <p id="f1"></p>
+
+            <h3>Arreglos Tipados</h3>
+            <p>Los arreglos tipados son una forma especial de arreglos que permiten almacenar y manipular datos binarios de manera más eficiente.
+                Este ejemplo es de un arreglo tipado utilizando Int8Array, que es un tipo de arreglo que almacena enteros de 8 bits con signo.
+            </p>
+            <p>Ejemplo:</p>
+            <button onclick="ArregloTipado()">Mostrar Arreglo</button>
+            <p id="arrayTipado"></p>
+
+        </section>
+
+        <!-- DOM -->
+        <section id="dom">
+            <h2>DOM</h2>
+
+            <!-- Encontrar elemento por ID -->
+            <h3>Encontrar elementos HTML por ID </h3>
+            <p>Ejemplo:</p>
+            <button onclick="modificarTexto()">Cambiar Texto</button>
+            <p id="textoDom">Este texto será modificado.</p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="scripts.js"></script>
+</body>
+</html>
